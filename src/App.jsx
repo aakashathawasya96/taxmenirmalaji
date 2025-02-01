@@ -115,12 +115,12 @@ function TaxCalculator() {
   };
 
   const ShareButtons = ({ difference }) => {
-    const shareText = `Thanks to Nirmala Ji 🙏 I am paying ₹${formatIndianNumber(Math.abs(difference))} ${difference > 0 ? 'more' : 'less'} in the new regime.\n\nCheck out → taxmenirmalaji.com`;
+    const shareText = `Thanks to Nirmala Ji 🙏 I am paying ₹${formatIndianNumber(Math.abs(difference))} ${difference > 0 ? 'more' : 'less'} in the new regime.\n\nCheck out → taxmenirmalaji.vercel.app`;
     
     const shareUrls = {
       twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`,
-      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=taxmenirmalaji.com&summary=${encodeURIComponent(shareText)}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=taxmenirmalaji.com&quote=${encodeURIComponent(shareText)}`
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=taxmenirmalaji.vercel.app&summary=${encodeURIComponent(shareText)}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=taxmenirmalaji.vercel.app&quote=${encodeURIComponent(shareText)}`
     };
 
     return (
@@ -183,6 +183,10 @@ function TaxCalculator() {
           <ShareButtons difference={result.difference} />
         </div>
       )}
+      
+      <div className="footer">
+        Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
+      </div>
     </div>
   );
 }
