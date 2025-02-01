@@ -54,43 +54,56 @@ function TaxCalculator() {
     let taxableIncome = income - 75000;
     let tax = 0;
 
-    if (taxableIncome <= 300000) {
+    if (taxableIncome <= 400000) {
       tax = 0;
-    } else if (taxableIncome <= 700000) {
-      // Tax on income between 3L to 7L
-      tax = (taxableIncome - 300000) * 0.05;
-    } else if (taxableIncome <= 1000000) {
-      // Tax on income between 3L to 7L
-      tax = (700000 - 300000) * 0.05;
-      // Add tax on income between 7L to 10L
-      tax += (taxableIncome - 700000) * 0.10;
+    } else if (taxableIncome <= 800000) {
+      // Tax on income between 4L to 8L
+      tax = (taxableIncome - 400000) * 0.05;
     } else if (taxableIncome <= 1200000) {
-      // Tax on income between 3L to 7L
-      tax = (700000 - 300000) * 0.05;
-      // Add tax on income between 7L to 10L
-      tax += (1000000 - 700000) * 0.10;
-      // Add tax on income between 10L to 12L
-      tax += (taxableIncome - 1000000) * 0.15;
-    } else if (taxableIncome <= 1500000) {
-      // Tax on income between 3L to 7L
-      tax = (700000 - 300000) * 0.05;
-      // Add tax on income between 7L to 10L
-      tax += (1000000 - 700000) * 0.10;
-      // Add tax on income between 10L to 12L
-      tax += (1200000 - 1000000) * 0.15;
-      // Add tax on income between 12L to 15L
-      tax += (taxableIncome - 1200000) * 0.20;
+      // Tax on income between 4L to 8L
+      tax = (800000 - 400000) * 0.05;
+      // Add tax on income between 8L to 12L
+      tax += (taxableIncome - 800000) * 0.10;
+    } else if (taxableIncome <= 1600000) {
+      // Tax on income between 4L to 8L
+      tax = (800000 - 400000) * 0.05;
+      // Add tax on income between 8L to 12L
+      tax += (1200000 - 800000) * 0.10;
+      // Add tax on income between 12L to 16L
+      tax += (taxableIncome - 1200000) * 0.15;
+    } else if (taxableIncome <= 2000000) {
+      // Tax on income between 4L to 8L
+      tax = (800000 - 400000) * 0.05;
+      // Add tax on income between 8L to 12L
+      tax += (1200000 - 800000) * 0.10;
+      // Add tax on income between 12L to 16L
+      tax += (1600000 - 1200000) * 0.15;
+      // Add tax on income between 16L to 20L
+      tax += (taxableIncome - 1600000) * 0.20;
+    } else if (taxableIncome <= 2400000) {
+      // Tax on income between 4L to 8L
+      tax = (800000 - 400000) * 0.05;
+      // Add tax on income between 8L to 12L
+      tax += (1200000 - 800000) * 0.10;
+      // Add tax on income between 12L to 16L
+      tax += (1600000 - 1200000) * 0.15;
+      // Add tax on income between 16L to 20L
+      tax += (2000000 - 1600000) * 0.20;
+      // Add tax on income between 20L to 24L
+      tax += (taxableIncome - 2000000) * 0.25;
     } else {
-      // Tax on income between 3L to 7L
-      tax = (700000 - 300000) * 0.05;
-      // Add tax on income between 7L to 10L
-      tax += (1000000 - 700000) * 0.10;
-      // Add tax on income between 10L to 12L
-      tax += (1200000 - 1000000) * 0.15;
-      // Add tax on income between 12L to 15L
-      tax += (1500000 - 1200000) * 0.20;
-      // Add tax on income above 15L
-      tax += (taxableIncome - 1500000) * 0.30;
+      // Tax on income between 4L to 8L
+      tax = (800000 - 400000) * 0.05;
+      // Add tax on income between 8L to 12L
+      tax += (1200000 - 800000) * 0.10;
+      // Add tax on income between 12L to 16L
+      tax += (1600000 - 1200000) * 0.15;
+      // Add tax on income between 16L to 20L
+      tax += (2000000 - 1600000) * 0.20;
+      // Add tax on income between 20L to 24L
+      tax += (2400000 - 2000000) * 0.25;
+      // Add tax on income above 24L
+      tax += (taxableIncome - 2400000) * 0.30;
     }
 
     return tax;
