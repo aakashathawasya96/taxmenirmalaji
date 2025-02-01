@@ -149,8 +149,8 @@ function TaxCalculator() {
 
   return (
     <div className="calculator">
-        <h1>Budget 2025 Income Tax Calculator</h1>   
-    
+      <h1>Budget 2025 Income Tax Calculator</h1>
+      
       <div className="input-group">
         <label>Annual Salary (₹)</label>
         <input
@@ -183,10 +183,10 @@ function TaxCalculator() {
           <ShareButtons difference={result.difference} />
         </div>
       )}
-      {/* Add this right before the final closing </div> in your return statement */}
-<div className="footer">
-  Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
-</div>
+      
+      <div className="footer">
+        Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
+      </div>
     </div>
   );
 }
