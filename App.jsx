@@ -183,6 +183,10 @@ function TaxCalculator() {
           <ShareButtons difference={result.difference} />
         </div>
       )}
+      {/* Add this right before the final closing </div> in your return statement */}
+<div className="footer">
+  Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
+</div>
     </div>
   );
 }
