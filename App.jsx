@@ -119,8 +119,8 @@ function TaxCalculator() {
     
     const shareUrls = {
       twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`,
-      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=taxmenirmalaji.com&summary=${encodeURIComponent(shareText)}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=taxmenirmalaji.com&quote=${encodeURIComponent(shareText)}`
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=taxmenirmalaji.vercep.app&summary=${encodeURIComponent(shareText)}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=taxmenirmalaji.vercel.app&quote=${encodeURIComponent(shareText)}`
     };
 
     return (
