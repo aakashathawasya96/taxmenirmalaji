@@ -133,11 +133,12 @@ button:hover {
 }
 
 .effective-rate {
-  font-size: 0.875rem !important;
+  font-size: 0.75rem !important;        /* Made even smaller */
   font-style: italic;
-  color: #666 !important;
-  font-weight: normal !important;
-  margin-top: 5px !important;
+  color: #999 !important;               /* Lighter grey for washed out look */
+  font-weight: 400 !important;
+  margin-top: 2px !important;
+  opacity: 0.8;                         /* Additional washing out */
 }
 
 .difference {
