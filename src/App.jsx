@@ -120,10 +120,18 @@ function TaxCalculator() {
     const newTax = calculateNewRegimeTax(income);
     const difference = newTax - oldTax;
 
+    const monthlyOldRegime = (income - oldTax) / 12;
+    const monthlyNewRegime = (income - newTax) / 12;
+    const monthlyPercentChange = ((monthlyNewRegime - monthlyOldRegime) / monthlyOldRegime) * 100;
+
+
     setResult({
       oldTax: Math.round(oldTax),
       newTax: Math.round(newTax),
-      difference: Math.round(difference)
+      difference: Math.round(difference),
+      monthlyOldRegime: Math.round(monthlyOldRegime),
+      monthlyNewRegime: Math.round(monthlyNewRegime),
+      monthlyPercentChange: monthlyPercentChange
     });
   };
 
@@ -196,6 +204,20 @@ function TaxCalculator() {
               {result.difference > 0 ? ' more' : ' less'} in new regime
             </p>
           </div>
+      <div className="result-item monthly-salary">
+            <h3>Monthly In-Hand Salary:</h3>
+            <div className="monthly-comparison">
+              <p className="amount">₹{formatIndianNumber(result.monthlyNewRegime)}</p>
+              <div className="change-indicator">
+                <span className="arrow">→</span>
+                <span className={result.monthlyPercentChange >= 0 ? 'increase' : 'decrease'}>
+                  {result.monthlyPercentChange >= 0 ? '+' : ''}
+                  {result.monthlyPercentChange.toFixed(1)}%
+                </span>
+              </div>
+            </div>
+          </div>
+          
           <ShareButtons difference={result.difference} />
           <div className="disclaimer">
             This calculator provides an estimate and doesn't account for all deductions, exemptions, or tax rules. Consult a professional.
