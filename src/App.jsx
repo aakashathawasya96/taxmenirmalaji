@@ -233,8 +233,6 @@ function TaxCalculator() {
     </div>
   </div>
 )}
-
-// Rest of the code remains same
       
       <div className="footer">
         Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
