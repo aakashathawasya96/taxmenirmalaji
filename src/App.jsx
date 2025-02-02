@@ -182,8 +182,6 @@ function TaxCalculator() {
 
       <button onClick={handleCalculate}>Tax Me Nirmala Ji</button>
 
-     // Previous imports and initial code remain same until the results section
-
 {result && (
   <div className="results">
     <div className="tax-comparison">
