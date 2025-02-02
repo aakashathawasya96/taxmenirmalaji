@@ -198,23 +198,18 @@ button:hover {
   gap: 12px;
 }
 
-.monthly-comparison .amount {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin: 0;
+.monthly-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;  /* Reduced from 12px */
 }
 
 .change-indicator {
   display: flex;
   align-items: center;
-  gap: 4px;
 }
 
-.change-indicator .arrow {
-  font-size: 20px;
-  color: #666;
-}
 
 .change-indicator .increase {
   color: #28a745;
@@ -224,4 +219,25 @@ button:hover {
 .change-indicator .decrease {
   color: #dc3545;
   font-weight: bold;
+}
+
+.percentage {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: bold;
+}
+
+.arrow-small {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.increase .arrow-small {
+  color: #28a745;
+}
+
+.decrease .arrow-small {
+  transform: rotate(180deg);
+  color: #dc3545;
 }
