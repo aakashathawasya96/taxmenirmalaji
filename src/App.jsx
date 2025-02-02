@@ -162,8 +162,10 @@ function TaxCalculator() {
 
   return (
     <div className="calculator">
-      <h1>Budget 2025 Income Tax Calculator</h1>
-      
+      <div className="header">
+        <h1>What's My Income Tax</h1>
+        <h2>After Budget 2025</h2>
+       </div>
       <div className="input-group">
         <label>Annual Salary (₹)</label>
         <input
