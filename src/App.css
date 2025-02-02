@@ -238,11 +238,13 @@ button:hover {
 }
 
 .rebate-checkbox {
-  margin-bottom: 20px;
+  margin-bottom: 15px;  
+  margin-top: -5px;     
   text-align: left;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;  
+  align-items: flex-start; 
+  gap: 4px;               
 }
 
 .rebate-checkbox label {
@@ -255,10 +257,12 @@ button:hover {
 .rebate-checkbox input[type="checkbox"] {
   width: auto;
   cursor: pointer;
+  margin: 0;
 }
 
 .rebate-info {
-  font-size: 12px;
-  color: #28a745;
-  margin-left: 8px;
+  font-size: 11px;          /* Reduced from 12px */
+  color: rgba(255, 255, 255, 0.6);  /* Made semi-transparent */
+  margin-left: 24px;        /* Align with checkbox text */
+  font-style: italic;       /* Added italics */
 }
