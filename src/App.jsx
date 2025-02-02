@@ -182,46 +182,61 @@ function TaxCalculator() {
 
       <button onClick={handleCalculate}>Tax Me Nirmala Ji</button>
 
-      {result && (
-        <div className="results">
-          <div className="result-item">
-            <h3>Tax under Old Regime:</h3>
-            <p>₹{formatIndianNumber(result.oldTax)}</p>
-          </div>
-          <div className="result-item">
-            <h3>Tax under New Regime:</h3>
-            <p>₹{formatIndianNumber(result.newTax || 0)}</p>  
-          </div>
-          <div className="result-item difference">
-            <h3>Difference:</h3>
-            <p className={result.difference > 0 ? 'more' : 'less'}>
-              ₹{formatIndianNumber(Math.abs(result.difference))}
-              {result.difference > 0 ? ' more' : ' less'} in new regime
-            </p>
-          </div>
-          <div className="result-item monthly-salary">
-            <h3>Monthly In-Hand Salary:</h3>
-            <div className="monthly-comparison">
-              <p className="amount">₹{formatIndianNumber(result.monthlyNewRegime)}</p>
-              <div className="change-indicator">
-                <span className={`percentage ${result.monthlyPercentChange >= 0 ? 'increase' : 'decrease'}`}>
-                  {result.monthlyPercentChange >= 0 ? '+' : ''}
-                  {result.monthlyPercentChange.toFixed(1)}%
-                  <span className="arrow-small">↑</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        <div className="share-section">
-            <h3>Share Your Gains</h3>
-            <ShareButtons difference={result.difference} />
+     // Previous imports and initial code remain same until the results section
+
+{result && (
+  <div className="results">
+    <div className="tax-comparison">
+      <div className="result-item old-regime">
+        <h3>Tax under Old Regime:</h3>
+        <p>₹{formatIndianNumber(result.oldTax)}</p>
+        <p className="effective-rate">
+          Effective Rate: {((result.oldTax / Number(salary)) * 100).toFixed(1)}%
+        </p>
+      </div>
+      <div className="result-item new-regime">
+        <h3>Tax under New Regime:</h3>
+        <p>₹{formatIndianNumber(result.newTax || 0)}</p>
+        <p className="effective-rate">
+          Effective Rate: {((result.newTax / Number(salary)) * 100).toFixed(1)}%
+        </p>
+      </div>
+    </div>
+    
+    <div className="result-item difference">
+      <h3>Difference:</h3>
+      <p className={result.difference > 0 ? 'more' : 'less'}>
+        ₹{formatIndianNumber(Math.abs(result.difference))}
+        {result.difference > 0 ? ' more' : ' less'} in new regime
+      </p>
+    </div>
+    
+    <div className="result-item monthly-salary">
+      <h3>Monthly In-Hand Salary:</h3>
+      <div className="monthly-comparison">
+        <p className="amount">₹{formatIndianNumber(result.monthlyNewRegime)}</p>
+        <div className="change-indicator">
+          <span className={`percentage ${result.monthlyPercentChange >= 0 ? 'increase' : 'decrease'}`}>
+            {result.monthlyPercentChange >= 0 ? '+' : ''}
+            {result.monthlyPercentChange.toFixed(1)}%
+            <span className="arrow-small">↑</span>
+          </span>
         </div>
-        
-          <div className="disclaimer">
-            This calculator provides an estimate and doesn't account for all deductions, exemptions, or tax rules. Consult a professional.
-          </div>
-        </div>
-      )}
+      </div>
+    </div>
+    
+    <div className="share-section">
+      <h3>Share Your Gains</h3>
+      <ShareButtons difference={result.difference} />
+    </div>
+    
+    <div className="disclaimer">
+      This calculator provides an estimate and doesn't account for all deductions, exemptions, or tax rules. Consult a professional.
+    </div>
+  </div>
+)}
+
+// Rest of the code remains same
       
       <div className="footer">
         Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
