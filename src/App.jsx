@@ -165,7 +165,8 @@ function TaxCalculator() {
       <div className="header">
         <h1>What's My Income Tax</h1>
         <h2>After Budget 2025</h2>
-       </div>
+      </div>
+      
       <div className="input-group">
         <label>Annual Salary (₹)</label>
         <input
@@ -196,6 +197,9 @@ function TaxCalculator() {
             </p>
           </div>
           <ShareButtons difference={result.difference} />
+          <div className="disclaimer">
+            This calculator provides an estimate and doesn't account for all deductions, exemptions, or tax rules. Consult a professional.
+          </div>
         </div>
       )}
       
