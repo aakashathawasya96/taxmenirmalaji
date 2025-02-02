@@ -105,19 +105,53 @@ button:hover {
   margin-top: 20px;
 }
 
+.tax-comparison {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+
 .result-item {
-  margin-bottom: 15px;
+  flex: 1;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 .result-item h3 {
   margin-bottom: 5px;
   color: #555;
+  font-size: 1rem;
 }
 
 .result-item p {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
+  margin: 10px 0;
+}
+
+.effective-rate {
+  font-size: 0.875rem !important;
+  font-style: italic;
+  color: #666 !important;
+  font-weight: normal !important;
+  margin-top: 5px !important;
+}
+
+.difference {
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.more {
+  color: #dc3545;
+}
+
+.less {
+  color: #28a745;
 }
 
 .difference .more {
@@ -279,4 +313,23 @@ button:hover {
   color: #555;
   margin-bottom: 15px;
   font-size: 18px;
+}
+
+.old-regime {
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+.new-regime {
+  background-color: rgba(25, 135, 84, 0.1);
+}
+
+@media (max-width: 600px) {
+  .tax-comparison {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .result-item {
+    margin-bottom: 10px;
+  }
 }
