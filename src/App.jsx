@@ -212,8 +212,6 @@ function TaxCalculator() {
               </div>
             </div>
           </div>
-          
-          <ShareButtons difference={result.difference} />
         <div className="share-section">
             <h3>Share Your Gains</h3>
             <ShareButtons difference={result.difference} />
