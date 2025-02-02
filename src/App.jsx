@@ -204,19 +204,19 @@ function TaxCalculator() {
               {result.difference > 0 ? ' more' : ' less'} in new regime
             </p>
           </div>
-      <div className="result-item monthly-salary">
-            <h3>Monthly In-Hand Salary:</h3>
-            <div className="monthly-comparison">
-              <p className="amount">₹{formatIndianNumber(result.monthlyNewRegime)}</p>
-              <div className="change-indicator">
-                <span className="arrow">→</span>
-                <span className={result.monthlyPercentChange >= 0 ? 'increase' : 'decrease'}>
-                  {result.monthlyPercentChange >= 0 ? '+' : ''}
-                  {result.monthlyPercentChange.toFixed(1)}%
-                </span>
+        <div className="result-item monthly-salary">
+              <h3>Monthly In-Hand Salary:</h3>
+              <div className="monthly-comparison">
+                <p className="amount">₹{formatIndianNumber(result.monthlyNewRegime)}</p>
+                <div className="change-indicator">
+                  <span className={`percentage ${result.monthlyPercentChange >= 0 ? 'increase' : 'decrease'}`}>
+                    {result.monthlyPercentChange >= 0 ? '+' : ''}
+                    {result.monthlyPercentChange.toFixed(1)}%
+                    <span className="arrow-small">↑</span>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
           
           <ShareButtons difference={result.difference} />
           <div className="disclaimer">
