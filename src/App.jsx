@@ -150,7 +150,7 @@ function TaxCalculator() {
   return (
     <div className="calculator">
       <div className="header">
-        <h1>Mom, where is lunch?</h1>
+        <h1>What's My Income Tax</h1>
         <h2>After Budget 2025</h2>
       </div>
       
