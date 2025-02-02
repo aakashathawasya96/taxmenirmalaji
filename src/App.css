@@ -261,8 +261,20 @@ button:hover {
 }
 
 .rebate-info {
-  font-size: 11px;          /* Reduced from 12px */
-  color: rgba(255, 255, 255, 0.6);  /* Made semi-transparent */
-  margin-left: 24px;        /* Align with checkbox text */
-  font-style: italic;       /* Added italics */
+  font-size: 11px;         
+  color: rgba(255, 255, 255, 0.6);  
+  margin-left: 24px;        
+  font-style: italic;       
+}
+
+.share-section {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.share-section h3 {
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 18px;
 }
