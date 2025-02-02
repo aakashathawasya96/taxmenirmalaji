@@ -214,6 +214,11 @@ function TaxCalculator() {
           </div>
           
           <ShareButtons difference={result.difference} />
+        <div className="share-section">
+            <h3>Share Your Gains</h3>
+            <ShareButtons difference={result.difference} />
+        </div>
+        
           <div className="disclaimer">
             This calculator provides an estimate and doesn't account for all deductions, exemptions, or tax rules. Consult a professional.
           </div>
