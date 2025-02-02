@@ -3,6 +3,7 @@ import './App.css';
 
 function TaxCalculator() {
   const [salary, setSalary] = useState('');
+  const [applyRebate, setApplyRebate] = useState(false);
   const [result, setResult] = useState(null);
 
   const formatIndianNumber = (num) => {
@@ -30,19 +31,13 @@ function TaxCalculator() {
     if (taxableIncome <= 250000) {
       tax = 0;
     } else if (taxableIncome <= 500000) {
-      // Tax on income between 2.5L to 5L
       tax = (taxableIncome - 250000) * 0.05;
     } else if (taxableIncome <= 1000000) {
-      // Tax on income between 2.5L to 5L
       tax = (500000 - 250000) * 0.05;
-      // Add tax on income between 5L to 10L
       tax += (taxableIncome - 500000) * 0.20;
     } else {
-      // Tax on income between 2.5L to 5L
       tax = (500000 - 250000) * 0.05;
-      // Add tax on income between 5L to 10L
       tax += (1000000 - 500000) * 0.20;
-      // Add tax on income above 10L
       tax += (taxableIncome - 1000000) * 0.30;
     }
 
@@ -52,57 +47,42 @@ function TaxCalculator() {
   const calculateNewRegimeTax = (income) => {
     // First deduct standard deduction
     let taxableIncome = income - 75000;
+
+    // Apply rebate if checkbox is checked and income is ≤ 12L
+    if (applyRebate && income <= 1200000) {
+      return 0;
+    }
+
     let tax = 0;
 
     if (taxableIncome <= 400000) {
       tax = 0;
     } else if (taxableIncome <= 800000) {
-      // Tax on income between 4L to 8L
       tax = (taxableIncome - 400000) * 0.05;
     } else if (taxableIncome <= 1200000) {
-      // Tax on income between 4L to 8L
       tax = (800000 - 400000) * 0.05;
-      // Add tax on income between 8L to 12L
       tax += (taxableIncome - 800000) * 0.10;
     } else if (taxableIncome <= 1600000) {
-      // Tax on income between 4L to 8L
       tax = (800000 - 400000) * 0.05;
-      // Add tax on income between 8L to 12L
       tax += (1200000 - 800000) * 0.10;
-      // Add tax on income between 12L to 16L
       tax += (taxableIncome - 1200000) * 0.15;
     } else if (taxableIncome <= 2000000) {
-      // Tax on income between 4L to 8L
       tax = (800000 - 400000) * 0.05;
-      // Add tax on income between 8L to 12L
       tax += (1200000 - 800000) * 0.10;
-      // Add tax on income between 12L to 16L
       tax += (1600000 - 1200000) * 0.15;
-      // Add tax on income between 16L to 20L
       tax += (taxableIncome - 1600000) * 0.20;
     } else if (taxableIncome <= 2400000) {
-      // Tax on income between 4L to 8L
       tax = (800000 - 400000) * 0.05;
-      // Add tax on income between 8L to 12L
       tax += (1200000 - 800000) * 0.10;
-      // Add tax on income between 12L to 16L
       tax += (1600000 - 1200000) * 0.15;
-      // Add tax on income between 16L to 20L
       tax += (2000000 - 1600000) * 0.20;
-      // Add tax on income between 20L to 24L
       tax += (taxableIncome - 2000000) * 0.25;
     } else {
-      // Tax on income between 4L to 8L
       tax = (800000 - 400000) * 0.05;
-      // Add tax on income between 8L to 12L
       tax += (1200000 - 800000) * 0.10;
-      // Add tax on income between 12L to 16L
       tax += (1600000 - 1200000) * 0.15;
-      // Add tax on income between 16L to 20L
       tax += (2000000 - 1600000) * 0.20;
-      // Add tax on income between 20L to 24L
       tax += (2400000 - 2000000) * 0.25;
-      // Add tax on income above 24L
       tax += (taxableIncome - 2400000) * 0.30;
     }
 
@@ -123,7 +103,6 @@ function TaxCalculator() {
     const monthlyOldRegime = (income - oldTax) / 12;
     const monthlyNewRegime = (income - newTax) / 12;
     const monthlyPercentChange = ((monthlyNewRegime - monthlyOldRegime) / monthlyOldRegime) * 100;
-
 
     setResult({
       oldTax: Math.round(oldTax),
@@ -185,6 +164,22 @@ function TaxCalculator() {
         />
       </div>
 
+      <div className="rebate-checkbox">
+        <label>
+          <input
+            type="checkbox"
+            checked={applyRebate}
+            onChange={(e) => setApplyRebate(e.target.checked)}
+          />
+          Apply Rebate
+        </label>
+        {applyRebate && (
+          <div className="rebate-info">
+            No tax up to ₹12,00,000
+          </div>
+        )}
+      </div>
+
       <button onClick={handleCalculate}>Tax Me Nirmala Ji</button>
 
       {result && (
@@ -204,19 +199,19 @@ function TaxCalculator() {
               {result.difference > 0 ? ' more' : ' less'} in new regime
             </p>
           </div>
-        <div className="result-item monthly-salary">
-              <h3>Monthly In-Hand Salary:</h3>
-              <div className="monthly-comparison">
-                <p className="amount">₹{formatIndianNumber(result.monthlyNewRegime)}</p>
-                <div className="change-indicator">
-                  <span className={`percentage ${result.monthlyPercentChange >= 0 ? 'increase' : 'decrease'}`}>
-                    {result.monthlyPercentChange >= 0 ? '+' : ''}
-                    {result.monthlyPercentChange.toFixed(1)}%
-                    <span className="arrow-small">↑</span>
-                  </span>
-                </div>
+          <div className="result-item monthly-salary">
+            <h3>Monthly In-Hand Salary:</h3>
+            <div className="monthly-comparison">
+              <p className="amount">₹{formatIndianNumber(result.monthlyNewRegime)}</p>
+              <div className="change-indicator">
+                <span className={`percentage ${result.monthlyPercentChange >= 0 ? 'increase' : 'decrease'}`}>
+                  {result.monthlyPercentChange >= 0 ? '+' : ''}
+                  {result.monthlyPercentChange.toFixed(1)}%
+                  <span className="arrow-small">↑</span>
+                </span>
               </div>
             </div>
+          </div>
           
           <ShareButtons difference={result.difference} />
           <div className="disclaimer">
