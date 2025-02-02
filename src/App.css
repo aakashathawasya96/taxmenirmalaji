@@ -184,3 +184,44 @@ button:hover {
   color: #888;
   font-size: 12px;  /* Decreased from 14px */
 }
+
+.monthly-salary {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.monthly-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.monthly-comparison .amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.change-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.change-indicator .arrow {
+  font-size: 20px;
+  color: #666;
+}
+
+.change-indicator .increase {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.change-indicator .decrease {
+  color: #dc3545;
+  font-weight: bold;
+}
