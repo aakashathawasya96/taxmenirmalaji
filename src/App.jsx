@@ -190,7 +190,7 @@ function TaxCalculator() {
           </div>
           <div className="result-item">
             <h3>Tax under New Regime:</h3>
-            <p>₹{formatIndianNumber(result.newTax)}</p>
+            <p>₹{formatIndianNumber(result.newTax || 0)}</p>  
           </div>
           <div className="result-item difference">
             <h3>Difference:</h3>
