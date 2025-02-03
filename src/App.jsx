@@ -184,21 +184,26 @@ function TaxCalculator() {
 
 {result && (
   <div className="results">
-    <div className="tax-comparison">
-      <div className="result-item old-regime">
-        <h3>Tax under Old Regime:</h3>
-        <p>₹{formatIndianNumber(result.oldTax)}</p>
-        <p className="effective-rate">
-          Effective Rate: {((result.oldTax / Number(salary)) * 100).toFixed(1)}%
-        </p>
-      </div>
-      <div className="result-item new-regime">
-        <h3>Tax under New Regime:</h3>
-        <p>₹{formatIndianNumber(result.newTax || 0)}</p>
-        <p className="effective-rate">
-          Effective Rate: {((result.newTax / Number(salary)) * 100).toFixed(1)}%
-        </p>
-      </div>
+   <div className="tax-comparison">
+  <div className="result-item old-regime">
+    <h3>Tax under Old Regime:</h3>
+    <p className="tax-amount">₹{formatIndianNumber(result.oldTax)}</p>
+    <p className="effective-rate">
+      Effective Rate: {((result.oldTax / Number(salary)) * 100).toFixed(1)}%
+    </p>
+    <h3>Take Home Annual Salary:</h3>
+    <p className="tax-amount">₹{formatIndianNumber(Number(salary) - result.oldTax)}</p>
+  </div>
+  <div className="result-item new-regime">
+    <h3>Tax under New Regime:</h3>
+    <p className="tax-amount">₹{formatIndianNumber(result.newTax || 0)}</p>
+    <p className="effective-rate">
+      Effective Rate: {((result.newTax / Number(salary)) * 100).toFixed(1)}%
+    </p>
+    <h3>Take Home Annual Salary:</h3>
+    <p className="tax-amount">₹{formatIndianNumber(Number(salary) - result.newTax)}</p>
+  </div>
+</div>
     </div>
     
     <div className="result-item difference">
