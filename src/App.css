@@ -107,15 +107,16 @@ button:hover {
 .tax-comparison {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 
 .result-item {
   flex: 1;
-  padding: 15px;
+  padding: 20px;
   border-radius: 8px;
+  text-align: center;
 }
 
 .result-item h3 {
@@ -232,13 +233,6 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-}
-
-.monthly-comparison {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
 }
 
@@ -341,13 +335,5 @@ button:hover {
   .tax-comparison {
     flex-direction: column;
   }
-
-  .old-regime, .new-regime {
-    margin-bottom: 10px;
-  }
   
- .result-item {
-  padding: 15px;
-  border-radius: 8px;
-}
 }
