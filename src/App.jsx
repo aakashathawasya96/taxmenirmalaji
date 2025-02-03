@@ -184,28 +184,27 @@ function TaxCalculator() {
 
 {result && (
   <div className="results">
-   <div className="tax-comparison">
-  <div className="result-item old-regime">
-    <h3>Tax under Old Regime:</h3>
-    <p className="tax-amount">₹{formatIndianNumber(result.oldTax)}</p>
-    <p className="effective-rate">
-      Effective Rate: {((result.oldTax / Number(salary)) * 100).toFixed(1)}%
-    </p>
-    <h3>Take Home Annual Salary:</h3>
-    <p className="tax-amount">₹{formatIndianNumber(Number(salary) - result.oldTax)}</p>
-  </div>
-  <div className="result-item new-regime">
-    <h3>Tax under New Regime:</h3>
-    <p className="tax-amount">₹{formatIndianNumber(result.newTax || 0)}</p>
-    <p className="effective-rate">
-      Effective Rate: {((result.newTax / Number(salary)) * 100).toFixed(1)}%
-    </p>
-    <h3>Take Home Annual Salary:</h3>
-    <p className="tax-amount">₹{formatIndianNumber(Number(salary) - result.newTax)}</p>
-  </div>
-</div>
+    <div className="tax-comparison">
+      <div className="result-item old-regime">
+        <h3>Tax under Old Regime:</h3>
+        <p className="tax-amount">₹{formatIndianNumber(result.oldTax)}</p>
+        <p className="effective-rate">
+          Effective Rate: {((result.oldTax / Number(salary)) * 100).toFixed(1)}%
+        </p>
+        <h3>Take Home Annual Salary:</h3>
+        <p className="tax-amount">₹{formatIndianNumber(Number(salary) - result.oldTax)}</p>
+      </div>
+      <div className="result-item new-regime">
+        <h3>Tax under New Regime:</h3>
+        <p className="tax-amount">₹{formatIndianNumber(result.newTax || 0)}</p>
+        <p className="effective-rate">
+          Effective Rate: {((result.newTax / Number(salary)) * 100).toFixed(1)}%
+        </p>
+        <h3>Take Home Annual Salary:</h3>
+        <p className="tax-amount">₹{formatIndianNumber(Number(salary) - result.newTax)}</p>
+      </div>
     </div>
-    
+
     <div className="result-item difference">
       <h3>Difference:</h3>
       <p className={result.difference > 0 ? 'more' : 'less'}>
@@ -213,7 +212,7 @@ function TaxCalculator() {
         {result.difference > 0 ? ' more' : ' less'} in new regime
       </p>
     </div>
-    
+
     <div className="result-item monthly-salary">
       <h3>Monthly In-Hand Salary:</h3>
       <div className="monthly-comparison">
@@ -227,23 +226,24 @@ function TaxCalculator() {
         </div>
       </div>
     </div>
-    
+
     <div className="share-section">
       <h3>Share Your Gains</h3>
       <ShareButtons difference={result.difference} />
     </div>
-    
+
     <div className="disclaimer">
       This calculator provides an estimate and doesn't account for all deductions, exemptions, or tax rules. Consult a professional.
     </div>
   </div>
-)}
-      
+    
       <div className="footer">
         Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
       </div>
     </div>
   );
 }
+
+)}
 
 export default TaxCalculator;
