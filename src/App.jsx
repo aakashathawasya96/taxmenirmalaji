@@ -244,6 +244,4 @@ function TaxCalculator() {
   );
 }
 
-)}
-
 export default TaxCalculator;
