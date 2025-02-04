@@ -20,14 +20,10 @@ html, body {
 .background-container {
   position: fixed;
   top: 50%;
-  right: 10%;  /* Adjusted to match red box position */
+  right: 10%;
   transform: translateY(-50%);
-  width: 40%;  /* Adjusted to match red box width */
+  width: 40%;
   height: 80vh;
-  background-image: url('/nirmalaji.png');
-  background-size: contain;
-  background-position: right center;
-  background-repeat: no-repeat;
   z-index: -1;
 }
 
