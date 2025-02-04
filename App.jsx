@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import nirmalaji from '/nirmalaji.png';  // Add this at the top with your other imports
+import nirmalaji from '/nirmalaji.png';  // Added this import
 
 function TaxCalculator() {
   const [salary, setSalary] = useState('');
@@ -186,7 +186,17 @@ function TaxCalculator() {
           Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
         </div>
       </div>
-      <div className="background-container"></div>
+      <div className="background-container">
+        <img 
+          src={nirmalaji} 
+          alt="Nirmala Ji"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain'
+          }}
+        />
+      </div>
     </div>
   );
 }
