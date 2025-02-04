@@ -26,17 +26,21 @@ body {
   margin-bottom: 30px;
 }
 
+h1, h2 {
+  text-align: center;
+  color: white;
+  font-family: 'Calgary Demo', sans-serif;
+}
+
 h1 {
   font-size: 2.2rem;
   margin-bottom: 5px;
-  font-family: 'Calgary Demo', sans-serif;
 }
 
 h2 {
   font-size: 1.4rem;
   margin-top: 0;
   opacity: 0.9;
-  font-family: 'Calgary Demo', sans-serif;
 }
 
 .input-group {
@@ -73,7 +77,7 @@ input[type="text"] {
 .rebate-checkbox input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  accent-color: #007bff;
+  accent-color: #2196F3;
   margin-right: 8px;
 }
 
@@ -84,16 +88,10 @@ input[type="text"] {
   font-size: 0.95rem;
 }
 
-.rebate-info {
-  font-size: 0.8rem;
-  color: #007bff;
-  margin-top: 4px;
-}
-
 button {
   width: 100%;
   padding: 14px;
-  background-color: #007bff;
+  background-color: #2196F3;
   color: white;
   border: none;
   border-radius: 8px;
@@ -104,14 +102,15 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #1976D2;
 }
 
 .results {
-  background-color: #333;
+  background-color: white;
   padding: 20px;
   border-radius: 12px;
   margin-top: 25px;
+  color: #333;
 }
 
 .tax-comparison {
@@ -124,33 +123,32 @@ button:hover {
   flex: 1;
   padding: 15px;
   border-radius: 8px;
-  text-align: center;
 }
 
 .result-item.old-regime {
-  background-color: rgba(230, 230, 250, 0.1);
+  background-color: #E8EAF6;  /* Light indigo color */
 }
 
 .result-item.new-regime {
-  background-color: rgba(144, 238, 144, 0.1);
+  background-color: #E8F5E9;  /* Light green color */
 }
 
 .result-item h3 {
   font-size: 0.9rem;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #333;
 }
 
 .tax-amount {
   font-size: 1.6rem;
   font-weight: bold;
   margin: 10px 0;
-  color: #ffffff;
+  color: #333;
 }
 
 .effective-rate {
   font-size: 0.8rem;
-  color: #999;
+  color: #666;
   margin: 5px 0;
 }
 
@@ -159,16 +157,56 @@ button:hover {
   text-align: center;
 }
 
-.more {
-  color: #ff4d4d;
-  font-size: 1.2rem;
-  font-weight: bold;
+.difference p {
+  margin: 5px 0;
 }
 
-.less {
-  color: #4CAF50;
-  font-size: 1.2rem;
+.difference .amount {
+  font-size: 2rem;
   font-weight: bold;
+  color: #4CAF50;  /* Green color for the amount */
+  margin: 0;
+}
+
+.difference .description {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 5px;
+}
+
+.monthly-salary {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.monthly-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.monthly-comparison .amount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4CAF50;  /* Green color */
+  margin: 0;
+}
+
+.change-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.percentage {
+  color: #4CAF50;  /* Green color */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.arrow-small {
+  color: #4CAF50;  /* Green color */
+  margin-left: 2px;
 }
 
 .footer {
@@ -179,7 +217,7 @@ button:hover {
 }
 
 .footer a {
-  color: #007bff;
+  color: #2196F3;
   text-decoration: none;
 }
 
@@ -190,7 +228,7 @@ button:hover {
 .share-section {
   margin-top: 25px;
   padding-top: 20px;
-  border-top: 1px solid #444;
+  border-top: 1px solid #ddd;
 }
 
 .share-buttons {
@@ -222,8 +260,8 @@ button:hover {
 
 .disclaimer {
   font-size: 0.7rem;
-  color: #777;
+  color: #666;
   margin-top: 20px;
   padding-top: 15px;
-  border-top: 1px solid #444;
+  border-top: 1px solid #ddd;
 }
