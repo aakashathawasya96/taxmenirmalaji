@@ -49,9 +49,9 @@ function TaxCalculator() {
     let taxableIncome = income - 75000;
 
     // Apply rebate if checkbox is checked and income is ≤ 12L
-    if (applyRebate && income <= 1200000) {
-      return 0;
-    }
+    if (income <= 1275000) {
+    return 0;
+  }
 
     let tax = 0;
 
