@@ -1,15 +1,30 @@
 @import url('https://fonts.cdnfonts.com/css/calgary-demo');
 
 body {
-  background-color: #1a1a1a;
+  background-color: white;  /* Changed from dark to white */
   color: white;
   margin: 0;
-  padding: 0;
+  padding: 20px;  /* Added padding for border space */
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  justify-content: flex-start;
+  border: 2px solid #556ca1;  /* Added border */
+}
+
+/* Add this new section for the right side background */
+.background-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;  /* Takes up right half of screen */
+  height: 100vh;
+  background-image: url('/nirmalaji.png');
+  background-size: contain;  /* or 'cover' depending on how you want it to fit */
+  background-position: center right;
+  background-repeat: no-repeat;
+  opacity: 0.8;  /* Makes image slightly transparent */
+  z-index: -1;  /* Puts it behind other content */
 }
 
 body::before {
