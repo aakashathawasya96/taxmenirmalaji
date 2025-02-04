@@ -66,26 +66,12 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
-.rebate-checkbox {
+.tax-disclaimer {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: -15px;
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.rebate-checkbox input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #2196F3;
-  margin-right: 8px;
-}
-
-.rebate-checkbox label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 0.95rem;
+  text-align: center;
 }
 
 button {
