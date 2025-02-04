@@ -206,12 +206,14 @@ function TaxCalculator() {
     </div>
 
     <div className="result-item difference">
-      <h3>Difference:</h3>
-      <p className={result.difference > 0 ? 'more' : 'less'}>
-        ₹{formatIndianNumber(Math.abs(result.difference))}
-        {result.difference > 0 ? ' more' : ' less'} in new regime
-      </p>
-    </div>
+  <h3>Difference:</h3>
+  <p className={result.difference > 0 ? 'more' : 'less'}>
+    <span className="amount">₹{formatIndianNumber(Math.abs(result.difference))}</span>
+    <span className="description">
+      {result.difference > 0 ? 'more' : 'less'} in new regime
+    </span>
+  </p>
+</div>
 
     <div className="result-item monthly-salary">
       <h3>Monthly In-Hand Salary:</h3>
