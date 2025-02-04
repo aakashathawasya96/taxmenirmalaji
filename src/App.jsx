@@ -164,23 +164,10 @@ function TaxCalculator() {
         />
       </div>
 
-      <div className="rebate-checkbox">
-        <label>
-          <input
-            type="checkbox"
-            checked={applyRebate}
-            onChange={(e) => setApplyRebate(e.target.checked)}
-          />
-          Apply Rebate
-        </label>
-        {applyRebate && (
-          <div className="rebate-info">
-            No tax up to ₹12,00,000
-          </div>
-        )}
-      </div>
-
       <button onClick={handleCalculate}>Tax Me Nirmala Ji</button>
+      <div className="tax-disclaimer">
+    Tax rebate applicable on a salary of ₹12.75L and lower
+      </div>
 
 {result && (
   <div className="results">
