@@ -126,11 +126,11 @@ button:hover {
 }
 
 .result-item.old-regime {
-  background-color: #E8EAF6;  /* Light indigo color */
+  background-color: #E8EAF6;
 }
 
 .result-item.new-regime {
-  background-color: #E8F5E9;  /* Light green color */
+  background-color: #E8F5E9;
 }
 
 .result-item h3 {
@@ -152,6 +152,7 @@ button:hover {
   margin: 5px 0;
 }
 
+/* Difference Section */
 .result-item.difference {
   margin-top: 20px;
   text-align: center;
@@ -174,44 +175,21 @@ button:hover {
 
 .result-item.difference .amount {
   font-size: 2rem;
-  color: #4CAF50;  /* Same green as the monthly salary */
+  color: #4CAF50;
   font-weight: bold;
   margin: 0;
 }
 
 .result-item.difference .description {
   font-size: 0.8rem;
-  color: #666;  /* Same color as "Effective Rate" */
+  color: #666;
   margin: 0;
 }
 
-.difference p {
-  margin: 5px 0;
-}
-
-.difference .amount {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #4CAF50;  /* Green color for the amount */
-  margin: 0;
-}
-
-.difference .description {
-  font-size: 0.9rem;
-  color: #333;
-  margin-top: 5px;
-}
-
+/* Monthly Salary Section */
 .monthly-salary {
   text-align: center;
   margin-top: 20px;
-}
-
-.monthly-comparison {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
 }
 
 .monthly-salary h3 {
@@ -221,17 +199,17 @@ button:hover {
   margin-bottom: 10px;
 }
 
+.monthly-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .monthly-salary .amount {
   font-size: 2rem;
   color: #4CAF50;
   font-weight: bold;
-}
-
-
-.monthly-comparison .amount {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #4CAF50;  /* Green color */
   margin: 0;
 }
 
@@ -252,22 +230,7 @@ button:hover {
   margin-left: 2px;
 }
 
-.change-indicator {
-  display: flex;
-  align-items: center;
-}
-
-.percentage {
-  color: #4CAF50;  /* Green color */
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.arrow-small {
-  color: #4CAF50;  /* Green color */
-  margin-left: 2px;
-}
-
+/* Footer and Share Section */
 .footer {
   margin-top: 30px;
   text-align: center;
