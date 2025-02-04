@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/calgary-demo');
 
+
 body {
   background-color: #1a1a1a;
   color: white;
@@ -7,20 +8,20 @@ body {
   padding: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;  /* Changed from center to flex-start */
+  padding-left: 10%;  /* Add some padding from the left edge */
 }
+
 
 .calculator {
   width: 100%;
-  max-width: 600px;  /* Increased from 400px */
-  margin: 40px;      /* Increased from 20px */
-  padding: 50px;     /* Increased from 30px */
+  max-width: 600px;
+  padding: 50px;
   text-align: center;
-  background-color: rgba(42, 42, 42, 0.95); /* Slightly transparent */
-  border-radius: 24px;  /* Increased from 16px */
+  background-color: #2a2a2a;
+  border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
 }
 
 .header {
