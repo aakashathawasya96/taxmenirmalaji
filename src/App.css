@@ -13,13 +13,14 @@ body {
 
 .calculator {
   width: 100%;
-  max-width: 400px;
-  margin: 20px;
-  padding: 30px;
+  max-width: 600px;  /* Increased from 400px */
+  margin: 40px;      /* Increased from 20px */
+  padding: 50px;     /* Increased from 30px */
   text-align: center;
-  background-color: #2a2a2a;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(42, 42, 42, 0.95); /* Slightly transparent */
+  border-radius: 24px;  /* Increased from 16px */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
 }
 
 .header {
