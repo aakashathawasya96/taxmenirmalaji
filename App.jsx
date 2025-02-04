@@ -23,26 +23,19 @@ function TaxCalculator() {
   };
 
   const calculateOldRegimeTax = (income) => {
-    // First deduct standard deduction
     let taxableIncome = income - 50000;
     let tax = 0;
 
     if (taxableIncome <= 250000) {
       tax = 0;
     } else if (taxableIncome <= 500000) {
-      // Tax on income between 2.5L to 5L
       tax = (taxableIncome - 250000) * 0.05;
     } else if (taxableIncome <= 1000000) {
-      // Tax on income between 2.5L to 5L
       tax = (500000 - 250000) * 0.05;
-      // Add tax on income between 5L to 10L
       tax += (taxableIncome - 500000) * 0.20;
     } else {
-      // Tax on income between 2.5L to 5L
       tax = (500000 - 250000) * 0.05;
-      // Add tax on income between 5L to 10L
       tax += (1000000 - 500000) * 0.20;
-      // Add tax on income above 10L
       tax += (taxableIncome - 1000000) * 0.30;
     }
 
@@ -50,46 +43,34 @@ function TaxCalculator() {
   };
 
   const calculateNewRegimeTax = (income) => {
-    // First deduct standard deduction
     let taxableIncome = income - 75000;
     let tax = 0;
+
+    if (income <= 1275000) {
+      return 0;
+    }
 
     if (taxableIncome <= 300000) {
       tax = 0;
     } else if (taxableIncome <= 700000) {
-      // Tax on income between 3L to 7L
       tax = (taxableIncome - 300000) * 0.05;
     } else if (taxableIncome <= 1000000) {
-      // Tax on income between 3L to 7L
       tax = (700000 - 300000) * 0.05;
-      // Add tax on income between 7L to 10L
       tax += (taxableIncome - 700000) * 0.10;
     } else if (taxableIncome <= 1200000) {
-      // Tax on income between 3L to 7L
       tax = (700000 - 300000) * 0.05;
-      // Add tax on income between 7L to 10L
       tax += (1000000 - 700000) * 0.10;
-      // Add tax on income between 10L to 12L
       tax += (taxableIncome - 1000000) * 0.15;
     } else if (taxableIncome <= 1500000) {
-      // Tax on income between 3L to 7L
       tax = (700000 - 300000) * 0.05;
-      // Add tax on income between 7L to 10L
       tax += (1000000 - 700000) * 0.10;
-      // Add tax on income between 10L to 12L
       tax += (1200000 - 1000000) * 0.15;
-      // Add tax on income between 12L to 15L
       tax += (taxableIncome - 1200000) * 0.20;
     } else {
-      // Tax on income between 3L to 7L
       tax = (700000 - 300000) * 0.05;
-      // Add tax on income between 7L to 10L
       tax += (1000000 - 700000) * 0.10;
-      // Add tax on income between 10L to 12L
       tax += (1200000 - 1000000) * 0.15;
-      // Add tax on income between 12L to 15L
       tax += (1500000 - 1200000) * 0.20;
-      // Add tax on income above 15L
       tax += (taxableIncome - 1500000) * 0.30;
     }
 
@@ -148,45 +129,63 @@ function TaxCalculator() {
   };
 
   return (
-    <div className="calculator">
-      <h1>Budget 2025 Income Tax Calculator</h1>
-      
-      <div className="input-group">
-        <label>Annual Salary (₹)</label>
-        <input
-          type="text"
-          value={formatIndianNumber(salary)}
-          onChange={handleInputChange}
-          placeholder="Enter your annual salary"
-        />
-      </div>
-
-      <button onClick={handleCalculate}>Tax Me Nirmala Ji</button>
-
-      {result && (
-        <div className="results">
-          <div className="result-item">
-            <h3>Tax under Old Regime:</h3>
-            <p>₹{formatIndianNumber(result.oldTax)}</p>
-          </div>
-          <div className="result-item">
-            <h3>Tax under New Regime:</h3>
-            <p>₹{formatIndianNumber(result.newTax)}</p>
-          </div>
-          <div className="result-item difference">
-            <h3>Difference:</h3>
-            <p className={result.difference > 0 ? 'more' : 'less'}>
-              ₹{formatIndianNumber(Math.abs(result.difference))}
-              {result.difference > 0 ? ' more' : ' less'} in new regime
-            </p>
-          </div>
-          <ShareButtons difference={result.difference} />
+    <div className="container">
+      <div className="calculator">
+        <h1>What's My Salary?</h1>
+        <h2>After Budget 2025</h2>
+        
+        <div className="input-group">
+          <label>Annual Salary (₹)</label>
+          <input
+            type="text"
+            value={formatIndianNumber(salary)}
+            onChange={handleInputChange}
+            placeholder="Enter your annual salary"
+          />
         </div>
-      )}
-      
-      <div className="footer">
-        Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
+
+        <button onClick={handleCalculate}>Tax Me Nirmala Ji</button>
+        <div className="tax-disclaimer">
+          Tax rebate applicable on a salary of ₹12.75L and lower
+        </div>
+
+        {result && (
+          <div className="results">
+            <div className="tax-comparison">
+              <div className="result-item old-regime">
+                <h3>Tax under Old Regime:</h3>
+                <p className="tax-amount">₹{formatIndianNumber(result.oldTax)}</p>
+                <p className="effective-rate">
+                  Effective Rate: {((result.oldTax / Number(salary)) * 100).toFixed(1)}%
+                </p>
+              </div>
+              <div className="result-item new-regime">
+                <h3>Tax under New Regime:</h3>
+                <p className="tax-amount">₹{formatIndianNumber(result.newTax)}</p>
+                <p className="effective-rate">
+                  Effective Rate: {((result.newTax / Number(salary)) * 100).toFixed(1)}%
+                </p>
+              </div>
+            </div>
+
+            <div className="result-item difference">
+              <h3>Difference:</h3>
+              <p className={result.difference > 0 ? 'more' : 'less'}>
+                <span className="amount">₹{formatIndianNumber(Math.abs(result.difference))}</span>
+                <span className="description">
+                  {result.difference > 0 ? 'more' : 'less'} in new regime
+                </span>
+              </p>
+            </div>
+            <ShareButtons difference={result.difference} />
+          </div>
+        )}
+        
+        <div className="footer">
+          Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
+        </div>
       </div>
+      <div className="background-container"></div>
     </div>
   );
 }
