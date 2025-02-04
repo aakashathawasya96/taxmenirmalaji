@@ -35,12 +35,12 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 5px;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 1.8rem;
   margin-top: 0;
   opacity: 0.9;
 }
@@ -58,30 +58,46 @@ label {
   font-size: 0.9rem;
 }
 
+input[type="text"],
+button {
+  width: 100%;
+  box-sizing: border-box;   /* Ensure padding doesn't add to width */
+}
+
 input[type="text"] {
   width: 100%;
-  padding: 16px;    /* Increased from 12px */
-  font-size: 20px;  /* Increased from 16px */
+  padding: 20px;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  background-color: #333;  /* Added for dark input */
+  color: white;           /* Added for text color */
+  box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+  color: #666;  /* Added for placeholder text */
 }
 
 .tax-disclaimer {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.7);
-  margin-top: -15px;
+  margin-top: -20px;  /* Adjusted to reduce space after button */
   margin-bottom: 20px;
   text-align: center;
 }
 
 button {
   width: 100%;
-  padding: 14px;
+  padding: 20px;
   background-color: #2196F3;
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1.2rem;
   cursor: pointer;
   margin-bottom: 25px;
+  margin: 30px 0;
   transition: background-color 0.2s;
 }
 
