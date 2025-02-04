@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import nirmalaji from '/nirmalaji.png';  // Add this at the top with your other imports
 
 function TaxCalculator() {
   const [salary, setSalary] = useState('');
