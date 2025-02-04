@@ -236,12 +236,14 @@ function TaxCalculator() {
       This calculator provides an estimate and doesn't account for all deductions, exemptions, or tax rules. Consult a professional.
     </div>
   </div>
-    
-      <div className="footer">
-        Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
-      </div>
-    </div>
-  );
-}
+)}
 
+<div className="footer">
+  Made by <a href="https://x.com/AakashAtha" target="_blank" rel="noopener noreferrer">Aakash</a>
+  </div>
+</div>
+
+    );  // closing parenthesis for return
+}
+    
 export default TaxCalculator;
