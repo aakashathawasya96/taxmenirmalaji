@@ -19,7 +19,7 @@ body {
   right: 0;
   width: 50%;
   height: 100vh;
-  background-image: url('/nirmalaji.png');
+  background-image: url('/public/nirmalaji.png');  /* Updated path */
   background-size: contain;
   background-position: center right;
   background-repeat: no-repeat;
